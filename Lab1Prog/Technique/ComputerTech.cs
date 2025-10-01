@@ -1,0 +1,84 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab1Prog.Technique
+{
+    class ComputerTech
+    {
+        private string _manufacturer;
+
+        public string Manufacturer
+        {
+            get { return _manufacturer; }
+            set {
+                ArgumentNullException.ThrowIfNull(value);
+                _manufacturer = value; 
+            }
+        }
+
+        private int _year;
+
+        public int Year
+        {
+            get { return _year; }
+            set
+            {
+                ArgumentOutOfRangeException.ThrowIfGreaterThan(value, DateOnly.FromDateTime(DateTime.Now).Year, "Year");
+                ArgumentOutOfRangeException.ThrowIfNegative(value, "Year");
+                _year = value;
+            }
+        }
+
+        
+
+        private int _storageCapacity;
+
+        public int StorageCapacity
+        {
+            get { return _storageCapacity; }
+            set {
+                ArgumentOutOfRangeException.ThrowIfNegative(value, "StorageCapacity");
+                _storageCapacity = value; 
+            }
+        }
+
+        private double _price;
+
+        public double Price
+        {
+            get { return _price; }
+            set {
+                ArgumentOutOfRangeException.ThrowIfNegative(value, "Price");
+                _price = value; 
+            }
+        }
+
+        public ComputerTech()
+        {
+            _manufacturer = string.Empty;
+            _year = 0;
+            _storageCapacity = 0;
+            _price = 0;
+        }
+
+        public ComputerTech(string manufacturer, int year, int storageCapacity, double price)
+        {
+            Manufacturer = manufacturer;
+            Year = year;
+            StorageCapacity = storageCapacity;
+            Price = price;
+        }
+
+        public virtual void Print()
+        {
+            Console.WriteLine($"Manufacturer: {_manufacturer}");
+            Console.WriteLine($"Price: {Price}");
+            Console.WriteLine($"Year: {Year}");
+            Console.WriteLine($"Storage Capacity: {StorageCapacity} GB");
+        }
+    }
+}
