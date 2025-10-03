@@ -9,9 +9,9 @@ namespace Lab1Prog.Technique
 {
     class ComputerTech
     {
-        private string _manufacturer;
+        private string? _manufacturer;
 
-        public string Manufacturer
+        public string? Manufacturer
         {
             get { return _manufacturer; }
             set {
@@ -65,7 +65,7 @@ namespace Lab1Prog.Technique
             _price = 0;
         }
 
-        public ComputerTech(string manufacturer, int year, int storageCapacity, double price)
+        public ComputerTech(string? manufacturer, int year, int storageCapacity, double price)
         {
             Manufacturer = manufacturer;
             Year = year;

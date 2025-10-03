@@ -8,9 +8,9 @@ namespace Lab1Prog.Technique.Keyboards
 {
     class Keyboard : ComputerTech
     {
-        private string _layout;
+        private string? _layout;
 
-        public string Layout
+        public string? Layout
         {
             get { return _layout; }
             set {
@@ -24,7 +24,7 @@ namespace Lab1Prog.Technique.Keyboards
             _layout = "QWERTY";
         }
 
-        public Keyboard(string manufacturer, int year, int storageCapacity, double price, string layout) 
+        public Keyboard(string? manufacturer, int year, int storageCapacity, double price, string? layout) 
             : base(manufacturer, year, storageCapacity, price)
         {
             Layout = layout;

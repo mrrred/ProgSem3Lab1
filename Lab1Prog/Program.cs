@@ -4,7 +4,7 @@ using Lab1Prog.Technique.Monitor;
 using System;
 using System.Collections.Generic;
 
-namespace Prog
+namespace Lab1Prog.TestProgram
 {
     class Program
     {
@@ -13,15 +13,16 @@ namespace Prog
             var devicesList = new List<ComputerTech>();
 
             char choice;
-            string manufacturer;
+            string? manufacturer;
             int year, val;
             double price;
-            string layout; // перемещаем объявление переменной сюда
+            string? layout; // перемещаем объявление переменной сюда
 
             do
             {
-                Console.WriteLine("Выберите тип устройства для создания (T - Техника, M - Монитор, K - Клавиатура, E - Выход): ");
-                choice = Convert.ToChar(Console.ReadKey());
+                Console.Write("Выберите тип устройства для создания (T - Техника, M - Монитор, K - Клавиатура, E - Выход): ");
+                choice = char.ToUpper(Console.ReadKey().KeyChar);
+                Console.WriteLine();
 
                 ComputerTech? newDevice = null;
 
