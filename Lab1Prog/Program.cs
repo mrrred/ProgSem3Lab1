@@ -1,12 +1,12 @@
 ﻿using Lab1Prog.Technique;
 using Lab1Prog.Technique.Keyboards;
-using Lab1Prog.Technique.Monitor;
+using Lab1Prog.Technique.Monitors;
 using System;
 using System.Collections.Generic;
 
 namespace Lab1Prog.TestProgram
 {
-    class Program
+    public class Program
     {
         static public void Main(string[] args)
         {
@@ -37,10 +37,10 @@ namespace Lab1Prog.TestProgram
                         val = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Введите цену: ");
                         price = Convert.ToDouble(Console.ReadLine());
-                        newDevice = new ComputerTech(manufacturer, year, val, price);
+                        newDevice = new ComputerTech(manufacturer ?? "", year, val, price);
                         break;
                     case 'M':
-                        double screenSize; 
+                        double screenSize;
                         int refreshRate;
                         Console.WriteLine("Введите производителя: ");
                         manufacturer = Console.ReadLine();
@@ -54,7 +54,7 @@ namespace Lab1Prog.TestProgram
                         screenSize = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Введите частоту обновления (в Гц): "); ;
                         refreshRate = Convert.ToInt32(Console.ReadLine());
-                        newDevice = new Display(manufacturer, year, val, price, screenSize, refreshRate);
+                        newDevice = new Display(manufacturer ?? "", year, val, price, screenSize, refreshRate);
                         break;
                     case 'K':
                         Console.WriteLine("Введите производителя: ");
@@ -67,7 +67,7 @@ namespace Lab1Prog.TestProgram
                         price = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Введите раскладку клавиатуры: "); ;
                         layout = Console.ReadLine();
-                        newDevice = new Keyboard(manufacturer, year, val, price, layout);
+                        newDevice = new Keyboard(manufacturer ?? "", year, val, price, layout);
                         break;
                     case 'E':
                         break;

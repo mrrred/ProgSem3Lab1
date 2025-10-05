@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lab1Prog.Technique.Keyboards
 {
-    class Keyboard : ComputerTech
+    public class Keyboard : ComputerTech
     {
-        private string? _layout;
+        private string _layout;
 
-        public string? Layout
+        public string Layout
         {
             get { return _layout; }
             set {
@@ -24,8 +24,14 @@ namespace Lab1Prog.Technique.Keyboards
             _layout = "QWERTY";
         }
 
-        public Keyboard(string? manufacturer, int year, int storageCapacity, double price, string? layout) 
+        public Keyboard(string manufacturer, int year, int storageCapacity, double price) 
             : base(manufacturer, year, storageCapacity, price)
+        {
+            _layout = "QWERTY";
+        }
+
+        public Keyboard(string manufacturer, int year, int storageCapacity, double price, string layout) 
+            : this(manufacturer, year, storageCapacity, price)
         {
             Layout = layout;
         }

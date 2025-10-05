@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Lab1Prog.Technique
 {
-    class ComputerTech
+    public class ComputerTech
     {
-        private string? _manufacturer;
+        private string _manufacturer;
 
-        public string? Manufacturer
+        public string Manufacturer
         {
             get { return _manufacturer; }
             set {
@@ -27,7 +27,7 @@ namespace Lab1Prog.Technique
             get { return _year; }
             set
             {
-                ArgumentOutOfRangeException.ThrowIfGreaterThan(value, DateOnly.FromDateTime(DateTime.Now).Year, "Year");
+                ArgumentOutOfRangeException.ThrowIfGreaterThan(value, DateTime.Now.Year, "Year");
                 ArgumentOutOfRangeException.ThrowIfNegative(value, "Year");
                 _year = value;
             }
@@ -52,7 +52,7 @@ namespace Lab1Prog.Technique
         {
             get { return _price; }
             set {
-                ArgumentOutOfRangeException.ThrowIfNegative(value, "Price");
+                ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value, "Price");
                 _price = value; 
             }
         }
@@ -65,7 +65,7 @@ namespace Lab1Prog.Technique
             _price = 0;
         }
 
-        public ComputerTech(string? manufacturer, int year, int storageCapacity, double price)
+        public ComputerTech(string manufacturer, int year, int storageCapacity, double price) : this()
         {
             Manufacturer = manufacturer;
             Year = year;

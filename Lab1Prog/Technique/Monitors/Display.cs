@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab1Prog.Technique.Monitor
+namespace Lab1Prog.Technique.Monitors
 {
-    class Display : ComputerTech
+    public class Display : ComputerTech
     {
         private double _screenSize;
 
@@ -36,7 +36,7 @@ namespace Lab1Prog.Technique.Monitor
             _refreshRate = 60;
         }
 
-        public Display(string? manufacturer, int year, int storageCapacity, double price, double screenSize, int refreshRate)
+        public Display(string manufacturer, int year, int storageCapacity, double price, double screenSize, int refreshRate)
             : base(manufacturer, year, storageCapacity, price)
         {
             ScreenSize = screenSize;
