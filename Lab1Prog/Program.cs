@@ -15,7 +15,7 @@ namespace Lab1Prog.TestProgram
             manufacturer = Console.ReadLine();
             Console.WriteLine("Введите год: ");
             year = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите объем: ");
+            Console.WriteLine("Введите количество в наличии: ");
             storageCapacity = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите цену: ");
             price = Convert.ToDouble(Console.ReadLine());

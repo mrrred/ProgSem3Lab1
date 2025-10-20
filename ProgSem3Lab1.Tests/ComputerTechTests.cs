@@ -51,7 +51,7 @@ namespace ProgSem3Lab1.Tests
         [DataRow(int.MaxValue)]
         public void StorageCapacity_ValidInt_ValueIsSetCorrectly(int storageCapacity)
         {
-            Assert.AreEqual(storageCapacity, new ComputerTech { StorageCapacity = storageCapacity }.StorageCapacity);
+            Assert.AreEqual(storageCapacity, new ComputerTech { AmountStock = storageCapacity }.AmountStock);
         }
 
         [TestMethod]
@@ -60,7 +60,7 @@ namespace ProgSem3Lab1.Tests
         [DataRow(int.MinValue)]
         public void StorageCapacity_NegativeInt_ArgumentOutOfRangeException(int storageCapacity)
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new ComputerTech { StorageCapacity = storageCapacity });
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new ComputerTech { AmountStock = storageCapacity });
         }
 
         [TestMethod]

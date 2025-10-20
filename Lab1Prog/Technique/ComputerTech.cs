@@ -35,14 +35,14 @@ namespace Lab1Prog.Technique
 
         
 
-        private int _storageCapacity;
+        private int _amountStock;
 
-        public int StorageCapacity
+        public int AmountStock
         {
-            get { return _storageCapacity; }
+            get { return _amountStock; }
             set {
                 ArgumentOutOfRangeException.ThrowIfNegative(value, "StorageCapacity");
-                _storageCapacity = value; 
+                _amountStock = value; 
             }
         }
 
@@ -61,7 +61,7 @@ namespace Lab1Prog.Technique
         {
             _manufacturer = string.Empty;
             _year = 0;
-            _storageCapacity = 0;
+            _amountStock = 0;
             _price = 0;
         }
 
@@ -69,7 +69,7 @@ namespace Lab1Prog.Technique
         {
             Manufacturer = manufacturer;
             Year = year;
-            StorageCapacity = storageCapacity;
+            AmountStock = storageCapacity;
             Price = price;
         }
 
@@ -78,7 +78,7 @@ namespace Lab1Prog.Technique
             Console.WriteLine($"Manufacturer: {_manufacturer}");
             Console.WriteLine($"Price: {Price}");
             Console.WriteLine($"Year: {Year}");
-            Console.WriteLine($"Storage Capacity: {StorageCapacity} GB");
+            Console.WriteLine($"Amount of stock: {AmountStock}");
         }
     }
 }
